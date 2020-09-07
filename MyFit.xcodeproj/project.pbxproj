@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33CE0E9C25049DCE0034EDF3 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE0E9B25049DCE0034EDF3 /* RealmDatabase.swift */; };
+		33CE0E9F25049E460034EDF3 /* PathPointRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */; };
 		33EE79DA24FD5F0000A0B3DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE79D924FD5F0000A0B3DF /* AppDelegate.swift */; };
 		33EE79DC24FD5F0000A0B3DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE79DB24FD5F0000A0B3DF /* SceneDelegate.swift */; };
 		33EE79E124FD5F0000A0B3DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE79DF24FD5F0000A0B3DF /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33CE0E9B25049DCE0034EDF3 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
+		33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPointRealm.swift; sourceTree = "<group>"; };
 		33EE79D624FD5F0000A0B3DF /* MyFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE79D924FD5F0000A0B3DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EE79DB24FD5F0000A0B3DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,23 @@
 				AA4D3595CF0DC888FC95490B /* Pods_MyFit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33CE0E9A25049D9D0034EDF3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				33CE0E9D25049DD40034EDF3 /* Model */,
+				33CE0E9B25049DCE0034EDF3 /* RealmDatabase.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		33CE0E9D25049DD40034EDF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		33EE79CD24FD5F0000A0B3DF = {
@@ -133,6 +154,7 @@
 		33EE79F224FD62C200A0B3DF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				33CE0E9A25049D9D0034EDF3 /* Database */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -183,6 +205,7 @@
 				33EE79D324FD5F0000A0B3DF /* Frameworks */,
 				33EE79D424FD5F0000A0B3DF /* Resources */,
 				0E69670D44779F2854D15941 /* [CP] Copy Pods Resources */,
+				D593BB7C2295EF30978D65CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +302,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D593BB7C2295EF30978D65CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFit/Pods-MyFit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFit/Pods-MyFit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFit/Pods-MyFit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,6 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CE0E9F25049E460034EDF3 /* PathPointRealm.swift in Sources */,
+				33CE0E9C25049DCE0034EDF3 /* RealmDatabase.swift in Sources */,
 				33EE79F924FD65FA00A0B3DF /* MainMapViewController.swift in Sources */,
 				33EE79DA24FD5F0000A0B3DF /* AppDelegate.swift in Sources */,
 				33EE79DC24FD5F0000A0B3DF /* SceneDelegate.swift in Sources */,

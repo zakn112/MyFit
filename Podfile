@@ -7,5 +7,6 @@ target 'MyFit' do
 
   # Pods for MyFit
   pod 'GoogleMaps'
+  pod 'RealmSwift'
 
 end
