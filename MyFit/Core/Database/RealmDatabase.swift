@@ -15,7 +15,7 @@ class DBRealmConfig {
     
     func setConfiguration() -> () {
         let config = Realm.Configuration(
-            schemaVersion: 1
+            schemaVersion: 2
         )
         
         Realm.Configuration.defaultConfiguration = config
@@ -75,4 +75,47 @@ class DBRealm {
     }
     
     
+}
+
+extension DBRealm {
+    func checkUser(login: String, password: String) -> Bool {
+        let realm = try! Realm()
+        
+        if let _ = realm.objects(UserRealm.self).filter("login == %@ AND password == %@", login, password).first {
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func checkUserLogin(login: String) -> Bool {
+         let realm = try! Realm()
+         
+         if let _ = realm.objects(UserRealm.self).filter("login == %@", login).first {
+             return true
+         }else{
+             return false
+         }
+     }
+    
+    func addUser(login: String, password: String) -> Bool{
+        if checkUserLogin(login: login) {
+            return false
+        }
+        
+        let realm = try! Realm()
+        do {
+            try realm.write {
+                let object = UserRealm()
+                object.login = login
+                object.password = password
+                realm.add(object)
+                
+            }
+            return true
+            
+        }catch{
+            return false
+        }
+    }
 }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331F3A04250B474A0002635C /* MainMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331F3A03250B474A0002635C /* MainMapCoordinator.swift */; };
+		3322C6B92509FBC3002EFD4F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6B82509FBC3002EFD4F /* BaseCoordinator.swift */; };
+		3322C6BB2509FD00002EFD4F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6BA2509FD00002EFD4F /* ApplicationCoordinator.swift */; };
+		3322C6BE2509FDAE002EFD4F /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */; };
+		3363190C2508AC02007FC4DB /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363190B2508AC02007FC4DB /* UserRealm.swift */; };
+		336319102508AD4E007FC4DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363190F2508AD4E007FC4DB /* LoginViewController.swift */; };
+		336319122509F507007FC4DB /* SinginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336319112509F507007FC4DB /* SinginViewController.swift */; };
 		33CE0E9C25049DCE0034EDF3 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE0E9B25049DCE0034EDF3 /* RealmDatabase.swift */; };
 		33CE0E9F25049E460034EDF3 /* PathPointRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */; };
 		33EE79DA24FD5F0000A0B3DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE79D924FD5F0000A0B3DF /* AppDelegate.swift */; };
@@ -19,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		331F3A03250B474A0002635C /* MainMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCoordinator.swift; sourceTree = "<group>"; };
+		3322C6B82509FBC3002EFD4F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		3322C6BA2509FD00002EFD4F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		3363190B2508AC02007FC4DB /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
+		3363190F2508AD4E007FC4DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		336319112509F507007FC4DB /* SinginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinginViewController.swift; sourceTree = "<group>"; };
 		33CE0E9B25049DCE0034EDF3 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPointRealm.swift; sourceTree = "<group>"; };
 		33EE79D624FD5F0000A0B3DF /* MyFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +77,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		331F3A02250B47240002635C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				331F3A03250B474A0002635C /* MainMapCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3322C6B72509FB89002EFD4F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3322C6B82509FBC3002EFD4F /* BaseCoordinator.swift */,
+				3322C6BA2509FD00002EFD4F /* ApplicationCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		3322C6BC2509FD89002EFD4F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3363190D2508ACC4007FC4DB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3322C6BC2509FD89002EFD4F /* Coordinators */,
+				3363190E2508ACE0007FC4DB /* Controllers */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3363190E2508ACE0007FC4DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3363190F2508AD4E007FC4DB /* LoginViewController.swift */,
+				336319112509F507007FC4DB /* SinginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		33CE0E9A25049D9D0034EDF3 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */,
+				3363190B2508AC02007FC4DB /* UserRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,7 +190,6 @@
 		33EE79EF24FD627600A0B3DF /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				33EE79F624FD659300A0B3DF /* MainMap */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -147,6 +204,8 @@
 		33EE79F124FD629200A0B3DF /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				33EE79F624FD659300A0B3DF /* MainMap */,
+				3363190D2508ACC4007FC4DB /* Login */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -154,6 +213,7 @@
 		33EE79F224FD62C200A0B3DF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3322C6B72509FB89002EFD4F /* Navigation */,
 				33CE0E9A25049D9D0034EDF3 /* Database */,
 			);
 			path = Core;
@@ -180,17 +240,18 @@
 		33EE79F624FD659300A0B3DF /* MainMap */ = {
 			isa = PBXGroup;
 			children = (
-				33EE79F724FD65C300A0B3DF /* Controller */,
+				331F3A02250B47240002635C /* Coordinators */,
+				33EE79F724FD65C300A0B3DF /* Controllers */,
 			);
 			path = MainMap;
 			sourceTree = "<group>";
 		};
-		33EE79F724FD65C300A0B3DF /* Controller */ = {
+		33EE79F724FD65C300A0B3DF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				33EE79F824FD65FA00A0B3DF /* MainMapViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,9 +387,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336319102508AD4E007FC4DB /* LoginViewController.swift in Sources */,
+				3322C6B92509FBC3002EFD4F /* BaseCoordinator.swift in Sources */,
+				3363190C2508AC02007FC4DB /* UserRealm.swift in Sources */,
 				33CE0E9F25049E460034EDF3 /* PathPointRealm.swift in Sources */,
+				3322C6BE2509FDAE002EFD4F /* LoginCoordinator.swift in Sources */,
 				33CE0E9C25049DCE0034EDF3 /* RealmDatabase.swift in Sources */,
+				3322C6BB2509FD00002EFD4F /* ApplicationCoordinator.swift in Sources */,
+				336319122509F507007FC4DB /* SinginViewController.swift in Sources */,
 				33EE79F924FD65FA00A0B3DF /* MainMapViewController.swift in Sources */,
+				331F3A04250B474A0002635C /* MainMapCoordinator.swift in Sources */,
 				33EE79DA24FD5F0000A0B3DF /* AppDelegate.swift in Sources */,
 				33EE79DC24FD5F0000A0B3DF /* SceneDelegate.swift in Sources */,
 			);
