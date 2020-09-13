@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		331F3A04250B474A0002635C /* MainMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331F3A03250B474A0002635C /* MainMapCoordinator.swift */; };
+		331F3A08250E0DAB0002635C /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331F3A07250E0DAB0002635C /* SecurityViewController.swift */; };
 		3322C6B92509FBC3002EFD4F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6B82509FBC3002EFD4F /* BaseCoordinator.swift */; };
 		3322C6BB2509FD00002EFD4F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6BA2509FD00002EFD4F /* ApplicationCoordinator.swift */; };
 		3322C6BE2509FDAE002EFD4F /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		331F3A03250B474A0002635C /* MainMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapCoordinator.swift; sourceTree = "<group>"; };
+		331F3A07250E0DAB0002635C /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
 		3322C6B82509FBC3002EFD4F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		3322C6BA2509FD00002EFD4F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 				331F3A03250B474A0002635C /* MainMapCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		331F3A05250E0D4A0002635C /* SecurityController */ = {
+			isa = PBXGroup;
+			children = (
+				331F3A07250E0DAB0002635C /* SecurityViewController.swift */,
+			);
+			path = SecurityController;
 			sourceTree = "<group>";
 		};
 		3322C6B72509FB89002EFD4F /* Navigation */ = {
@@ -204,6 +214,7 @@
 		33EE79F124FD629200A0B3DF /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				331F3A05250E0D4A0002635C /* SecurityController */,
 				33EE79F624FD659300A0B3DF /* MainMap */,
 				3363190D2508ACC4007FC4DB /* Login */,
 			);
@@ -391,6 +402,7 @@
 				3322C6B92509FBC3002EFD4F /* BaseCoordinator.swift in Sources */,
 				3363190C2508AC02007FC4DB /* UserRealm.swift in Sources */,
 				33CE0E9F25049E460034EDF3 /* PathPointRealm.swift in Sources */,
+				331F3A08250E0DAB0002635C /* SecurityViewController.swift in Sources */,
 				3322C6BE2509FDAE002EFD4F /* LoginCoordinator.swift in Sources */,
 				33CE0E9C25049DCE0034EDF3 /* RealmDatabase.swift in Sources */,
 				3322C6BB2509FD00002EFD4F /* ApplicationCoordinator.swift in Sources */,
