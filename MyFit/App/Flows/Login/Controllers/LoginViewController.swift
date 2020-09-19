@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     var onMap: (() -> Void)?
     var onSingin: (() -> Void)?
@@ -18,7 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureLoginBindings()
 
         // Do any additional setup after loading the view.
     }
@@ -52,6 +55,20 @@ class LoginViewController: UIViewController {
         onSingin?()
     }
     
+    func configureLoginBindings() {
+           _ = Observable
+                .combineLatest(
+                    loginTextField.rx.text,
+                    passwordTextField.rx.text
+                )
+                .map { login, password in
+                    return !(login ?? "").isEmpty && (password ?? "").count >= 3
+                }
+                .bind { [weak loginButton] inputFilled in
+                    loginButton?.isEnabled = inputFilled
+                    loginButton?.backgroundColor = inputFilled ? .systemPink : .gray
+            }
+        }
 
     /*
     // MARK: - Navigation

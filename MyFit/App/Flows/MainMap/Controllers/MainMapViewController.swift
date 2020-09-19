@@ -11,7 +11,7 @@ import GoogleMaps
 import CoreLocation
 
 class MainMapViewController: UIViewController {
-    var locationManager: CLLocationManager?
+    var locationManager = LocationManager.instance
     let coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     
     var route: GMSPolyline?
@@ -38,12 +38,24 @@ class MainMapViewController: UIViewController {
     }
     
     func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.delegate = self
+        _ = locationManager
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard let location = location, let self = self else { return }
+                if self.isPathStarted {
+                    self.routePath?.add(location.coordinate)
+                    self.pathCoordinates.append(location.coordinate)
+                    // Обновляем путь у линии маршрута путём повторного присвоения
+                    self.route?.path = self.routePath
+                    print(location.coordinate)
+                    
+                    // Чтобы наблюдать за движением, установим камеру на только что добавленную
+                    // точку
+                    let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+                    self.mapView.animate(to: position)
+                }
+            }
     }
     
     func addMarker(markerCoordinate: CLLocationCoordinate2D) {
@@ -57,7 +69,7 @@ class MainMapViewController: UIViewController {
 
     @IBAction func startButtonPress(_ sender: Any) {
         if isPathStarted {
-            locationManager?.stopUpdatingLocation()
+            locationManager.stopUpdatingLocation()
             
             DBRealm.shared.writeRoutePath(routePath: pathCoordinates)
             pathCoordinates = []
@@ -75,7 +87,7 @@ class MainMapViewController: UIViewController {
             routePath = GMSMutablePath()
             route?.map = mapView
             
-            locationManager?.startUpdatingLocation()
+            locationManager.startUpdatingLocation()
             
             startStopButtom.setTitle("Stop", for: .normal)
             isPathStarted = true
@@ -89,12 +101,18 @@ class MainMapViewController: UIViewController {
         route = GMSPolyline()
         routePath = GMSMutablePath()
         route?.map = mapView
-        
+        var lastPoin:CLLocationCoordinate2D?
         for point in lastRout {
             routePath?.add(point)
-            route?.path = routePath
-            moveToCoordinate(markerCoordinate: point)
+            lastPoin = point
         }
+        route?.path = routePath
+        
+        if let lastPoin = lastPoin {
+            let position = GMSCameraPosition.camera(withTarget: lastPoin, zoom: 17)
+            self.mapView.animate(to: position)
+        }
+        
     }
     /*
     // MARK: - Navigation
@@ -105,6 +123,9 @@ class MainMapViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+
 
 }
 
@@ -116,15 +137,7 @@ extension MainMapViewController: GMSMapViewDelegate {
 
 extension MainMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        if let firstLocation = locations.first {
-            routePath?.add(firstLocation.coordinate)
-            route?.path = routePath
-            moveToCoordinate(markerCoordinate: firstLocation.coordinate)
-            pathCoordinates.append(firstLocation.coordinate)
-    
-            
-        }
+ 
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

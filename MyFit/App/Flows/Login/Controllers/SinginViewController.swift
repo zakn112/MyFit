@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SinginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var singinButton: UIButton!
     
     var onMap: (() -> Void)?
     var onLogin: (() -> Void)?
@@ -18,7 +21,7 @@ class SinginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureSinginBindings()
         // Do any additional setup after loading the view.
     }
     
@@ -43,6 +46,21 @@ class SinginViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func configureSinginBindings() {
+           _ = Observable
+                .combineLatest(
+                    loginTextField.rx.text,
+                    passwordTextField.rx.text
+                )
+                .map { login, password in
+                    return !(login ?? "").isEmpty && (password ?? "").count >= 3
+                }
+                .bind { [weak singinButton] inputFilled in
+                    singinButton?.isEnabled = inputFilled
+                    singinButton?.backgroundColor = inputFilled ? .systemPink : .gray
+            }
+        }
     
     
     /*
