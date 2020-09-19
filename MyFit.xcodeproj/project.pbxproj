@@ -18,6 +18,7 @@
 		33CE0E9C25049DCE0034EDF3 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE0E9B25049DCE0034EDF3 /* RealmDatabase.swift */; };
 		33CE0E9F25049E460034EDF3 /* PathPointRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */; };
 		33EC667F2515F2130099ECDE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC667E2515F2130099ECDE /* LocationManager.swift */; };
+		33EC66862516019A0099ECDE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EC66852516019A0099ECDE /* Session.swift */; };
 		33EE79DA24FD5F0000A0B3DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE79D924FD5F0000A0B3DF /* AppDelegate.swift */; };
 		33EE79DC24FD5F0000A0B3DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE79DB24FD5F0000A0B3DF /* SceneDelegate.swift */; };
 		33EE79E124FD5F0000A0B3DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EE79DF24FD5F0000A0B3DF /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		33CE0E9B25049DCE0034EDF3 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		33CE0E9E25049E460034EDF3 /* PathPointRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathPointRealm.swift; sourceTree = "<group>"; };
 		33EC667E2515F2130099ECDE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		33EC66852516019A0099ECDE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		33EE79D624FD5F0000A0B3DF /* MyFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EE79D924FD5F0000A0B3DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EE79DB24FD5F0000A0B3DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		33EC6684251601850099ECDE /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				33EC66852516019A0099ECDE /* Session.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
 		33EE79CD24FD5F0000A0B3DF = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +244,7 @@
 		33EE79F224FD62C200A0B3DF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				33EC6684251601850099ECDE /* Session */,
 				33EC667D2515F1A80099ECDE /* Location */,
 				3322C6B72509FB89002EFD4F /* Navigation */,
 				33CE0E9A25049D9D0034EDF3 /* Database */,
@@ -414,6 +425,7 @@
 				3363190C2508AC02007FC4DB /* UserRealm.swift in Sources */,
 				33CE0E9F25049E460034EDF3 /* PathPointRealm.swift in Sources */,
 				331F3A08250E0DAB0002635C /* SecurityViewController.swift in Sources */,
+				33EC66862516019A0099ECDE /* Session.swift in Sources */,
 				3322C6BE2509FDAE002EFD4F /* LoginCoordinator.swift in Sources */,
 				33CE0E9C25049DCE0034EDF3 /* RealmDatabase.swift in Sources */,
 				3322C6BB2509FD00002EFD4F /* ApplicationCoordinator.swift in Sources */,

@@ -38,6 +38,7 @@ class SinginViewController: UIViewController {
         }
         let isCorrectUser = DBRealm.shared.addUser(login: userName, password: userPassword)
         if isCorrectUser {
+            Session.shared.isLogin = true
             onMap?()
         }else{
             let alert = UIAlertController(title: "Error", message: "Registration error.", preferredStyle: .alert)

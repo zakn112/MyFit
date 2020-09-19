@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
         }
         let isCorrectUser = DBRealm.shared.checkUser(login: userName, password: userPassword)
         if isCorrectUser {
+            Session.shared.isLogin = true
             onMap?()
         }else{
             let alert = UIAlertController(title: "Error", message: "Invalid username or password.", preferredStyle: .alert)
