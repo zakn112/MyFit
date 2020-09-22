@@ -36,7 +36,7 @@ final class LocationManager: NSObject {
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
     }
     
 }
