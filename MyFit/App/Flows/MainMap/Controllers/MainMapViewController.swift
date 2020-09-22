@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import UserNotifications
 
 class MainMapViewController: UIViewController {
     var locationManager = LocationManager.instance
@@ -24,6 +25,8 @@ class MainMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UNUserNotificationCenter.current().delegate = self
         
         mapView.delegate = self
         
@@ -81,6 +84,9 @@ class MainMapViewController: UIViewController {
             
             startStopButtom.setTitle("Start", for: .normal)
             isPathStarted = false
+            
+            NotificationManager.shared.msgGoStart()
+            
         }else {
             route?.map = nil
             route = GMSPolyline()
@@ -129,12 +135,14 @@ class MainMapViewController: UIViewController {
 
 }
 
+// MARK: - GMSMapViewDelegate
 extension MainMapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print(coordinate)
     }
 }
 
+// MARK: - CLLocationManagerDelegate
 extension MainMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
  
@@ -142,6 +150,16 @@ extension MainMapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
+    }
+    
+}
+
+// MARK: - UNUserNotificationCenterDelegate
+
+extension MainMapViewController: UNUserNotificationCenterDelegate{
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.badge])
     }
     
 }

@@ -61,6 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             sceneDelegate?.window?.rootViewController = securController
         }
         
+        NotificationManager.shared.msgGoBack()
         
     }
 
