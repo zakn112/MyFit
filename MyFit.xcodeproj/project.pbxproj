@@ -12,6 +12,7 @@
 		3322C6B92509FBC3002EFD4F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6B82509FBC3002EFD4F /* BaseCoordinator.swift */; };
 		3322C6BB2509FD00002EFD4F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6BA2509FD00002EFD4F /* ApplicationCoordinator.swift */; };
 		3322C6BE2509FDAE002EFD4F /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */; };
+		3327C4E7251A799600C425DA /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3327C4E6251A799600C425DA /* NotificationManager.swift */; };
 		3363190C2508AC02007FC4DB /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363190B2508AC02007FC4DB /* UserRealm.swift */; };
 		336319102508AD4E007FC4DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363190F2508AD4E007FC4DB /* LoginViewController.swift */; };
 		336319122509F507007FC4DB /* SinginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336319112509F507007FC4DB /* SinginViewController.swift */; };
@@ -34,6 +35,7 @@
 		3322C6B82509FBC3002EFD4F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		3322C6BA2509FD00002EFD4F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		3327C4E6251A799600C425DA /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		3363190B2508AC02007FC4DB /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		3363190F2508AD4E007FC4DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		336319112509F507007FC4DB /* SinginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinginViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 				3322C6BD2509FDAE002EFD4F /* LoginCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3327C4E5251A794F00C425DA /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				3327C4E6251A799600C425DA /* NotificationManager.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		3363190D2508ACC4007FC4DB /* Login */ = {
@@ -236,6 +246,7 @@
 		33EE79F224FD62C200A0B3DF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3327C4E5251A794F00C425DA /* Notification */,
 				33EC6684251601850099ECDE /* Session */,
 				33EC667D2515F1A80099ECDE /* Location */,
 				3322C6B72509FB89002EFD4F /* Navigation */,
@@ -431,6 +442,7 @@
 				3322C6BB2509FD00002EFD4F /* ApplicationCoordinator.swift in Sources */,
 				336319122509F507007FC4DB /* SinginViewController.swift in Sources */,
 				33EE79F924FD65FA00A0B3DF /* MainMapViewController.swift in Sources */,
+				3327C4E7251A799600C425DA /* NotificationManager.swift in Sources */,
 				33EC667F2515F2130099ECDE /* LocationManager.swift in Sources */,
 				331F3A04250B474A0002635C /* MainMapCoordinator.swift in Sources */,
 				33EE79DA24FD5F0000A0B3DF /* AppDelegate.swift in Sources */,
