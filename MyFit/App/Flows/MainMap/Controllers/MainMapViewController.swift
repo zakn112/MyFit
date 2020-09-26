@@ -51,7 +51,10 @@ class MainMapViewController: UIViewController {
                     self.pathCoordinates.append(location.coordinate)
                     // Обновляем путь у линии маршрута путём повторного присвоения
                     self.route?.path = self.routePath
-                    print(location.coordinate)
+
+                    if let _ = Session.shared.avatarImage {
+                        self.addMarker(markerCoordinate: location.coordinate)
+                    }
                     
                     // Чтобы наблюдать за движением, установим камеру на только что добавленную
                     // точку
@@ -62,7 +65,12 @@ class MainMapViewController: UIViewController {
     }
     
     func addMarker(markerCoordinate: CLLocationCoordinate2D) {
+        let rect = CGRect(x: 0, y: 0, width: 20, height: 20)
+        let view = UIImageView(frame: rect)
+        view.image = Session.shared.avatarImage
+
         let marker = GMSMarker(position: markerCoordinate)
+        marker.iconView = view
         marker.map = mapView
     }
     
@@ -120,6 +128,23 @@ class MainMapViewController: UIViewController {
         }
         
     }
+    
+    
+    @IBAction func setAvatarButtonPress(_ sender: Any) {
+        // Проверка, поддерживает ли устройство камеру
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        // Создаём контроллер и настраиваем его
+                let imagePickerController = UIImagePickerController()
+        // Источник изображений: камера
+                imagePickerController.sourceType = .photoLibrary
+        // Изображение можно редактировать
+                imagePickerController.allowsEditing = true
+                imagePickerController.delegate = self
+                
+        // Показываем контроллер
+                present(imagePickerController, animated: true)
+
+    }
     /*
     // MARK: - Navigation
 
@@ -162,4 +187,33 @@ extension MainMapViewController: UNUserNotificationCenterDelegate{
         completionHandler([.alert,.badge])
     }
     
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension MainMapViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+    
+    internal func imagePickerController(
+        _ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+
+        let image = extractImage(from: info)
+        Session.shared.avatarImage = image
+
+        picker.dismiss(animated: true)
+    }
+    
+    private func extractImage(from info: [UIImagePickerController.InfoKey: Any]) -> UIImage? {
+
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            return image
+        } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            return image
+        } else {
+            return nil
+        }
+    }
 }

@@ -36,11 +36,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAi-7O-tuA">
-                                <rect key="frame" x="120" y="773" width="200" height="30"/>
+                                <rect key="frame" x="120" y="773" width="120" height="30"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="V6p-6D-IXN"/>
-                                    <constraint firstAttribute="width" constant="200" id="sJp-Ic-G2i"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="sJp-Ic-G2i"/>
                                 </constraints>
                                 <state key="normal" title="View last route">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,10 +49,25 @@
                                     <action selector="viewLastRoutButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Npf-q9-3Cr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EO7-xz-p27">
+                                <rect key="frame" x="250" y="773" width="100" height="30"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1CB-xI-uH2"/>
+                                    <constraint firstAttribute="height" constant="30" id="TlT-y0-Hvp"/>
+                                </constraints>
+                                <state key="normal" title="Set avatar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setAvatarButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G8C-pR-Do5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EO7-xz-p27" firstAttribute="leading" secondItem="bAi-7O-tuA" secondAttribute="trailing" constant="10" id="2Zg-IO-65e"/>
                             <constraint firstItem="eek-SH-MUt" firstAttribute="top" secondItem="2aw-Na-MHc" secondAttribute="bottom" constant="10" id="36O-Tc-kJR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eek-SH-MUt" secondAttribute="bottom" constant="10" id="5it-Hq-wbx"/>
                             <constraint firstItem="2aw-Na-MHc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DDW-Lq-Waz"/>
@@ -60,6 +75,7 @@
                             <constraint firstItem="2aw-Na-MHc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XH4-vT-9f0"/>
                             <constraint firstItem="2aw-Na-MHc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bhC-xb-4hV"/>
                             <constraint firstItem="eek-SH-MUt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dj6-io-UNX"/>
+                            <constraint firstItem="EO7-xz-p27" firstAttribute="top" secondItem="2aw-Na-MHc" secondAttribute="bottom" constant="10" id="oQx-UJ-dI0"/>
                             <constraint firstItem="bAi-7O-tuA" firstAttribute="leading" secondItem="eek-SH-MUt" secondAttribute="trailing" constant="10" id="zQJ-yB-pGp"/>
                         </constraints>
                     </view>
