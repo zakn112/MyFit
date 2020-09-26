@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class Session {
     
     static let shared = Session()
     
     var isLogin = false
+    var avatarImage: UIImage?
+    
     
     private init() {
     }
